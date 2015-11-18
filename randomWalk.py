@@ -16,6 +16,9 @@ Start with 100 to 1000, step 10
 import random
 
 # Define ranges here
+startRange = 0
+endRange = 100
+stepRange = 10
 
 def main():
     printHeader()
@@ -29,7 +32,16 @@ def printHeader():
 
 def getRandomWalk(steps):
     # Calculate a random walk of given steps
-    return 0 # replace with actual average
+    distance = 0
+    for i in range(steps):
+        flip = random.randint(1,2)
+        # 1=Heads
+        if flip == 1:
+            distance += 1
+        # 2=Tails
+        else:
+            distance -= 1
+    return distance # replace with actual average
 
 if __name__ == "__main__":
     main()
